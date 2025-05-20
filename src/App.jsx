@@ -16,7 +16,7 @@ const App = () => {
     fetchData();
   }, [])
 
-  const fetchData = (async()=>{          // memoised function
+  const fetchData = useCallback(async()=>{          // memoised function
     const apiData = await fetch('https://dummyjson.com/products');
     const jsonData = await apiData.json();
     const data = jsonData.products;
